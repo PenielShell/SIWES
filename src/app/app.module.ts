@@ -10,9 +10,12 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { AppRoutingModule } from './/app-routing.module';
 
 
+
 const routes: Routes = [
-  
-];
+  { path: '', redirectTo: 'student', pathMatch: 'full' },
+  { path: 'student', component: PageHeaderComponent },
+  { path: 'student', component: SidebarComponent },
+  ];
 @NgModule({
   declarations: [
     AppComponent,
