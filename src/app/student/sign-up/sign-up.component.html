@@ -1,14 +1,14 @@
 <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
-    <input type="text" #matricNo="ngModel" [(ngModel)]="userService.selectedUser.matricNo" name="matricNo" placeholder="Matric No" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !matricNo.valid }">
+    <input type="number" #matricNo="ngModel" [(ngModel)]="studentService.selectedStudent.matricNo" name="matricNo" placeholder="Matric No" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !matricNo.valid }">
     <div *ngIf="signUpForm.submitted && !matricNo.valid">
         <label class="validation-message">This field is required.</label>
     </div>
-    <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email" required [pattern]="emailRegex" [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
+    <input type="text" #email="ngModel" [(ngModel)]="studentService.selectedStudent.email" name="email" placeholder="Email" required [pattern]="emailRegex" [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
     <div *ngIf="signUpForm.submitted && email.errors">
         <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
         <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
     </div>
-    <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password" minlength="4" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
+    <input type="password" #password="ngModel" [(ngModel)]="studentService.selectedStudent.password" name="password" placeholder="Password" minlength="4" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
     <div *ngIf="signUpForm.submitted && password.errors">
         <label *ngIf="password.errors.required" class="validation-message">This field is required.</label>
         <label *ngIf="password.errors.minlength" class="validation-message">Enter atleast 4 characters.</label>

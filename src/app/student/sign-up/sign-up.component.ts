@@ -14,13 +14,13 @@ export class SignUpComponent implements OnInit {
   showSucessMessage: boolean;
   serverErrorMessages: string;
 
-  constructor(private userService: StudentService) { }
+  constructor(private studentService: StudentService) { }
 
   ngOnInit() {
   }
 
   onSubmit(form: NgForm) {
-    this.userService.postStudent(form.value).subscribe(
+    this.studentService.postStudent(form.value).subscribe(
       res => {
         this.showSucessMessage = true;
         setTimeout(() => this.showSucessMessage = false, 4000);
@@ -37,8 +37,8 @@ export class SignUpComponent implements OnInit {
   }
 
   resetForm(form: NgForm) {
-    this.userService.selectedStudent = {
-      matricNo: '',
+    this.studentService.selectedStudent = {
+      matricNo: 1,
       email: '',
       password: ''
     };

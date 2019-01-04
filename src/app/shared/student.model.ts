@@ -1,5 +1,5 @@
 export class Student {
-   matricNo: string;
-    email: string; 
-    password: string;
+  matricNo: number;
+ email: string; 
+ password: string;
 }
