@@ -5,33 +5,53 @@ import { AppComponent } from './app.component';
 import { StudentComponent } from './student/student.component';
 import { InstitutionComponent } from './institution/institution.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './auth.service'
+import { UserService } from './user.service'
+import { AuthGuard } from './auth.guard';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SignUpComponent } from './student/sign-up/sign-up.component';
 
 
-
-const routes: Routes = [
-  { path: '', redirectTo: 'student', pathMatch: 'full' },
-  { path: 'student', component: PageHeaderComponent },
-  { path: 'student', component: SidebarComponent },
-  ];
 @NgModule({
   declarations: [
     AppComponent,
     StudentComponent,
-    InstitutionComponent,
     LoginComponent,
+    InstitutionComponent,
     PageHeaderComponent,
     SidebarComponent,
+    SignUpComponent,
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'institution',
+        component: InstitutionComponent,
+       
+      },
+      {
+        path: '',
+        component: StudentComponent
+      }
+    ])
   ],
 
-  providers: [],
+  providers: [AuthService, UserService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
