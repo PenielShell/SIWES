@@ -1,5 +1,5 @@
 <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
-    <input type="number" #matricNo="ngModel" [(ngModel)]="studentService.selectedStudent.matricNo" name="matricNo" placeholder="Matric No" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !matricNo.valid }">
+    <input type="text" #matricNo="ngModel" [(ngModel)]="studentService.selectedStudent.matricNo" name="matricNo" placeholder="Matric No" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !matricNo.valid }">
     <div *ngIf="signUpForm.submitted && !matricNo.valid">
         <label class="validation-message">This field is required.</label>
     </div>
