@@ -1,0 +1,23 @@
+<table *ngIf="studentDetails" class="table-fill">
+    <thead>
+        <tr>
+            <th colspan="2" class="text-center">User Profile</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>Matric Number</td>
+            <td>{{studentDetails.matricNo}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{studentDetails.email}}</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="text-center">
+                <input type="button" (click)="onLogout()" value="Logout" />
+            </td>
+        </tr>
+    </tbody>
+</table>
