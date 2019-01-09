@@ -298,6 +298,29 @@ label.validation-message {
 }
 
 
+/*Another for route below*/
+
+.underlineHover1:after {
+    display: block;
+    left: 0;
+    height: 2px;
+    background-color: #56baed;
+    content: "";
+    transition: width 0.2s;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+}
+
+.underlineHover1:hover {
+    color: #0d0d0d;
+}
+
+.underlineHover1:hover:after {
+    width: 100%;
+}
+
+
 /* OTHERS */
 
 *:focus {
@@ -369,7 +392,7 @@ th:last-child {
 
 tr {
     border-top: 1px solid #C1C3D1;
-    border-bottom-: 1px solid #C1C3D1;
+    border-bottom: 1px solid #C1C3D1;
     color: #666B85;
     font-size: 16px;
     font-weight: normal;

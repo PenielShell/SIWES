@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { environment } from '../../environments/environment';
-import { Student } from './student.model';
+import { environment } from '../../../environments/environment';
+import { Staff } from './staff.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StudentService {
-  selectedStudent: Student = {
-    matricNo: 0,
+export class StaffService {
+  selectedStaff: Staff = {
+    staffId: 0,
     email: '',
     password: ''
   };
@@ -18,15 +18,15 @@ export class StudentService {
 
   constructor(private http: HttpClient) { }
 
-  postStudent(student: Student){
-    return this.http.post(environment.apiBaseUrl1 +'/register',student,this.noAuthHeader);
+  postStaff(staff: Staff){
+    return this.http.post(environment.apiBaseUrl+'/register',staff,this.noAuthHeader);
   }
   login(authCredentials) {
-    return this.http.post(environment.apiBaseUrl1 + '/authenticate', authCredentials,this.noAuthHeader);
+    return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials,this.noAuthHeader);
   }
 
-  getStudentDashboard() {
-    return this.http.get(environment.apiBaseUrl1 + '/studentDashboard');
+  getStaffDashboard() {
+    return this.http.get(environment.apiBaseUrl + '/staffDashboard');
   }
 
 
