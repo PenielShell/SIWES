@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../shared/student.service';
 import { Router } from "@angular/router";
+import { Student } from '../shared/student.model';
 
 @Component({
   selector: 'app-student-dashboard',
@@ -10,7 +11,13 @@ import { Router } from "@angular/router";
 export class StudentDashboardComponent implements OnInit {
   studentDetails;
   constructor(private studentService: StudentService, private router: Router) { }
+  loginInfo:Student = {
+    matricNo: 1,
+    email: '',
+    password: ''
 
+    
+};
   ngOnInit() {
     this.studentService.getStudentDashboard().subscribe(
       res => {

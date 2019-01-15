@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { StaffService } from '../shared/staff.service';
 import { Router } from "@angular/router";
+import {Staff} from "../shared/staff.model";
+import {HomeComponent} from "./pages/home/home.component";
+
+
+
 
 @Component({
   selector: 'app-staff-dashboard',
@@ -8,20 +13,19 @@ import { Router } from "@angular/router";
   styleUrls: ['./staff-dashboard.component.css']
 })
 export class StaffDashboardComponent implements OnInit {
-  staffDetails;
+  loginInfo:Staff = {
+    staffId: 1,
+    email: '', 
+    password: ''
+
+    
+};
   constructor(private staffService: StaffService, private router: Router) { }
 
   ngOnInit() {
-    this.staffService.getStaffDashboard().subscribe(
-      res => {
-        this.staffDetails = res['staff'];
-      },
-      err => { 
-        console.log(err);
-        
-      }
-    );
+    
   }
+ 
 
   onLogout(){
     this.staffService.deleteToken();
@@ -29,4 +33,19 @@ export class StaffDashboardComponent implements OnInit {
   }
 
 }
+// export const appRoutes=[
+//   {
+//       path:'',
+//       redirectTo:'home',
+//       pathMatch:'full'
+//   },
+//   {
+//       path: 'home',
+//       component: HomeComponent
+//   },
+//   {
+//       path: 'others',
+//       loadChildren:'./pages/others/others.module#OthersModule',
+//   },
+// ];
 

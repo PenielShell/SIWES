@@ -1,20 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/* @import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('./assets/styles/style.css');
+@import url('./assets/styles/font-awesome.min.css');
+@import url('./assets/styles/bootstrap.min.css'); */
+
+
+/* @import url('./assets/styles');
+
 
 /* BASIC */
 
 html {
-    background-color: #56baed;
+    /* background-color: #56baed; */
+    height: 100%;
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
     height: 100vh;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
 }
 
 a {
-    color: #92badd;
+    /* color: #92badd; */
     display: inline-block;
     text-decoration: none;
     font-weight: 400;
@@ -27,7 +41,7 @@ h2 {
     text-transform: uppercase;
     display: inline-block;
     margin: 40px 8px 10px 8px;
-    color: #cccccc;
+    /* color: #cccccc; */
 }
 
 
@@ -39,7 +53,8 @@ h2 {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    padding: 20px;
+    overflow-x: hidden;
+    padding: 0 20px;
 }
 
 #formContent {
@@ -354,7 +369,8 @@ label.validation-message {
 
 /* Table Styles */
 
-.table-fill {
+
+/* .table-fill {
     background: white;
     border-radius: 3px;
     border-collapse: collapse;
@@ -388,9 +404,10 @@ th:first-child {
 th:last-child {
     border-top-right-radius: 3px;
     border-right: none;
-}
+} */
 
-tr {
+
+/* tr {
     border-top: 1px solid #C1C3D1;
     border-bottom: 1px solid #C1C3D1;
     color: #666B85;
@@ -456,4 +473,7 @@ td.text-center {
 
 td.text-right {
     text-align: right;
-}
+} */
+
+
+/*Staff Dashboard css*/

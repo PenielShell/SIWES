@@ -12,6 +12,7 @@ import { SignUpComponent } from './student/sign-up/sign-up.component';
 import { SignUp1Component } from './institution/staff/sign-up1/sign-up1.component';
 
 
+
 //routes
 import { appRoutes } from './routes';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
@@ -22,12 +23,20 @@ import { SignIn1Component } from './institution/staff/sign-in1/sign-in1.componen
 import { StaffService } from './institution/shared/staff.service';
 
 
+
 //other
 import { AuthGuard } from './auth/auth.guard';
 import { AuthGuard1 } from './institution/auth/auth.guard1';
 import { AuthInterceptor1 } from './institution/auth/auth.interceptor1';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { StaffComponent } from './institution/staff/staff.component';
+import {Topnavbar} from "./institution/staff-dashboard/components/topnavbar/topnavbar.component";
+import {Navigation} from "./institution/staff-dashboard/components/navigation/navigation.component";
+import {HomeComponent} from "./institution/staff-dashboard/pages/home/home.component";
+import {Topnavbar1} from "./student-dashboard/components/topnavbar1/topnavbar1.component";
+import {Navigation1} from "./student-dashboard/components/navigation1/navigation1.component";
+import {Home1Component} from "./student-dashboard/pages/home1/home1.component";
+
 
 
 @NgModule({
@@ -40,7 +49,14 @@ import { StaffComponent } from './institution/staff/staff.component';
     StaffComponent,
     SignUp1Component,
     StaffDashboardComponent,
-    SignIn1Component
+    SignIn1Component,
+    Topnavbar,
+    Navigation,
+    HomeComponent,
+    Topnavbar1,
+    Navigation1,
+    Home1Component
+    
   ],
   imports: [
     BrowserModule,

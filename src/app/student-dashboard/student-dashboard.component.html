@@ -1,4 +1,4 @@
-<table *ngIf="studentDetails" class="table-fill">
+<!-- <table *ngIf="studentDetails" class="table-fill">
     <thead>
         <tr>
             <th colspan="2" class="text-center">User Profile</th>
@@ -20,4 +20,23 @@
             </td>
         </tr>
     </tbody>
-</table>
+</table> -->
+
+
+<div id="wrapper">
+    <navigation1 [loginInfo]="loginInfo" *ngIf="loginInfo"></navigation1>
+
+    <div id="page-wrapper" class="gray-bg">
+
+        <topnavbar1></topnavbar1>
+        <router-outlet></router-outlet>
+
+
+        <div class="footer">
+            <div>
+                <strong>Copyright</strong> Andrew &copy; 2017
+            </div>
+        </div>
+    </div>
+
+</div>
