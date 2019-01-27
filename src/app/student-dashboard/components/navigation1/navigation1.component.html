@@ -4,8 +4,8 @@
             <li class="nav-header">
                 <div class="dropdown profile-element">
                     <span>
-                        <img alt="image" class="img-circle" width="80px"
-                             src="/src/assets/img/avatar/{{loginInfo.avatar}}" />
+                        <img alt="image" class="img-circle" width="80px">
+                        <img src="/src/assets/img/users.png" id="icon" alt="User Icon" />
                     </span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
@@ -22,10 +22,16 @@
             </li>
 
             <li [ngClass]="{active: activeRoute('home')}">
-                <a [routerLink]="['./home1']"><i class="fa fa-dashboard"></i> <span class="nav-label">Dashboards</span></a>
+                <a [routerLink]="['./home1']"><i class="fa fa-dashboard"></i> <span class="nav-label">Documents</span></a>
             </li>
             <li [ngClass]="{active: activeRoute('others')}">
-                <a [routerLink]="['./others1']"><i class="fa fa-desktop"></i> <span class="nav-label">Others</span></a>
+                <a [routerLink]="['./others1']"><i class="fa fa-desktop"></i> <span class="nav-label">Logbook</span></a>
+            </li>
+            <li [ngClass]="{active: activeRoute('report')}">
+                <a [routerLink]="['./report']"><i class="fa fas fa-database"></i> <span class="nav-label">Report</span></a>
+            </li>
+            <li [ngClass]="{active: activeRoute('evaluate')}">
+                <a [routerLink]="['./evaluate']"><i class="fa fas fa-notes-medical"></i> <span class="nav-label">Evaluation</span></a>
             </li>
         </ul>
 

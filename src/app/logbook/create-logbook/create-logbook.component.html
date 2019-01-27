@@ -1,0 +1,20 @@
+<h6 class="pb-2 mb-0">Logbbok Entry</h6>
+
+<form [formGroup]="logbookForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+        <label for="workdone">Work done</label>
+        <input formControlName="workdone" type="text" class="form-control" id="workdone" placeholder="workdone">
+        <small *ngIf="logbookForm.get('workdone').hasError('required')" class="form-text text-danger">workdone is required.</small>
+    </div>
+    <div class="form-group">
+        <label for="term">New Word</label>
+        <input formControlName="term" type="text" class="form-control" id="term" placeholder="term">
+        <small *ngIf="logbookForm.get('term').hasError('required')" class="form-text text-danger">new word is required.</small>
+    </div>
+    <div class="form-group">
+        <label for="meaning">Meaning</label>
+        <input formControlName="meaning" type="text" class="form-control" id="meaning" placeholder="new word definition">
+        <small *ngIf="logbookForm.get('meaning').hasError('required')" class="form-text text-danger">Defintion is required.</small>
+    </div>
+    <button type="submit" [disabled]="loader || logbookForm.invalid" class="btn btn-primary">{{loader?'Adding':'Add'}}</button>
+</form>

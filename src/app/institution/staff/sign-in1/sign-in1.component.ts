@@ -15,7 +15,7 @@ export class SignIn1Component implements OnInit {
   constructor(private staffService: StaffService,private router : Router) { }
 
   model ={
-    staffId :1,
+    staffId :null,
     password:''
   };
  // emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

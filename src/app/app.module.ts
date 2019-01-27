@@ -1,10 +1,15 @@
 // built-in
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { NgAlertModule } from '@theo4u/ng-alert';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {HTTP_INTERCEPTORS } from '@angular/common/http';
+import {FileUploadModule} from 'ng2-file-upload';
+
+
 // components
 import { AppComponent } from './app.component';
 import { StudentComponent } from './student/student.component';
@@ -21,7 +26,10 @@ import { StudentService } from './shared/student.service';
 import { StaffDashboardComponent } from './institution/staff-dashboard/staff-dashboard.component';
 import { SignIn1Component } from './institution/staff/sign-in1/sign-in1.component';
 import { StaffService } from './institution/shared/staff.service';
-
+import { FormaService } from './shared2/forma.service';
+import { FormbService } from './shared3/formb.service';
+import { LogbookService } from '././logbook/services/logbook.service';
+import { PusherService } from '././logbook/services/pusher.service';
 
 
 //other
@@ -36,6 +44,14 @@ import {HomeComponent} from "./institution/staff-dashboard/pages/home/home.compo
 import {Topnavbar1} from "./student-dashboard/components/topnavbar1/topnavbar1.component";
 import {Navigation1} from "./student-dashboard/components/navigation1/navigation1.component";
 import {Home1Component} from "./student-dashboard/pages/home1/home1.component";
+import { ReportComponent } from './student-dashboard/pages/report/report.component';
+import { EvaluateComponent } from './student-dashboard/pages/evaluate/evaluate.component';
+import { FormaComponent } from './forma/forma.component';
+import { ButtonAComponent } from './student-dashboard/buttons/button-a/button-a.component';
+import { ButtonBComponent } from './student-dashboard/buttons/button-b/button-b.component';
+import { FormbComponent } from './formb/formb.component';
+import { StudentEvaluateComponent } from './student-evaluate/student-evaluate.component';
+
 
 
 
@@ -55,20 +71,33 @@ import {Home1Component} from "./student-dashboard/pages/home1/home1.component";
     HomeComponent,
     Topnavbar1,
     Navigation1,
-    Home1Component
+    Home1Component,
+    ReportComponent,
+    EvaluateComponent,
+    FormaComponent,
+    ButtonAComponent,
+    ButtonBComponent,
+    FormbComponent,
+    StudentEvaluateComponent,
+   
     
   ],
   imports: [
     BrowserModule,
+    NgAlertModule,
     FormsModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FileUploadModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
+ 
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
-  },AuthGuard,AuthGuard1,StudentService,StaffService],
+  },AuthGuard,AuthGuard1,StudentService,StaffService,FormaService,FormbService,LogbookService,PusherService],
 
   bootstrap: [AppComponent]
 })

@@ -12,7 +12,7 @@ export class StudentDashboardComponent implements OnInit {
   studentDetails;
   constructor(private studentService: StudentService, private router: Router) { }
   loginInfo:Student = {
-    matricNo: 1,
+    matricNo: null,
     email: '',
     password: ''
 

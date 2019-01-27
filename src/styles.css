@@ -13,7 +13,7 @@
 /* BASIC */
 
 html {
-    /* background-color: #56baed; */
+    background-color: #56baed;
     height: 100%;
 }
 
@@ -477,3 +477,14 @@ td.text-right {
 
 
 /*Staff Dashboard css*/
+
+.inner {
+    width: 60vw;
+    margin-left: 20%;
+    margin: 5px;
+}
+
+.container {
+    height: 0px;
+    overflow: hidden;
+}

@@ -9,7 +9,7 @@ import { Student } from './student.model';
 })
 export class StudentService {
   selectedStudent: Student = {
-    matricNo: 0,
+    matricNo: null,
     email: '',
     password: ''
   };

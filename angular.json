@@ -26,7 +26,10 @@
                             "src/styles.css",
                             "src/assets/styles/bootstrap.min.css",
                             "src/assets/styles/font-awesome.min.css",
-                            "src/assets/styles/style.css"
+                            "src/assets/styles/style.css",
+                            "./node_modules/bootstrap/dist/css/bootstrap.css",
+                            "./node_modules/open-iconic/font/css/open-iconic-bootstrap.css",
+                            "./node_modules/@theo4u/ng-alert/style.css"
                         ],
                         "scripts": []
                     },
@@ -76,9 +79,16 @@
                             "./styles.css",
                             "./assets/styles/bootstrap.min.css",
                             "./assets/styles/font-awesome.min.css",
-                            "./assets/styles/style.css"
+                            "./assets/styles/style.css",
+                            "./node_modules/bootstrap/dist/css/bootstrap.css",
+                            "./node_modules/open-iconic/font/css/open-iconic-bootstrap.css",
+                            "./node_modules/@theo4u/ng-alert/style.css"
+
                         ],
-                        "scripts": ["../node_modules/jquery"],
+                        "scripts": ["../node_modules/jquery",
+                            "../node_modules/jquery/dist/jquery.min.js",
+                            "../node_modules/jquery-ui-dist/jquery-ui.js"
+                        ],
                         "assets": [
                             "src/favicon.ico",
                             "src/assets"

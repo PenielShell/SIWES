@@ -1,0 +1,33 @@
+<h6 class="pb-2 mb-0">Logbook Entry</h6>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">workdone</th>
+            <th scope="col">term</th>
+            <th scope="col">meaning</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let logbook of logbooks">
+            <td>
+                <span *ngIf="logbook.new" class="badge badge-primary">new</span> {{logbook.workdone}}
+            </td>
+            <td>{{logbook.term}}</td>
+            <td>{{logbook.meaning}}</td>
+            <td>{{logbook.createdAt | date:'yyyy/MM/dd'}}</td>
+            <td>
+                <button class="btn btn-primary btn-sm">
+          <span class="oi oi-pencil"></span>
+        </button>
+                <button (click)="delete(logbook)" class="btn btn-danger btn-sm">
+          <span class="oi oi-trash"></span>
+        </button>
+            </td>
+        </tr>
+        <tr *ngIf="loading">
+            <td colspan="5" align="center">Fetching Logbook</td>
+        </tr>
+    </tbody>
+</table>

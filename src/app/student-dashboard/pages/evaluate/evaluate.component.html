@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col s12">
+      <div class="card">
+          <div class="card-content white-text">
+              <div class="row">
+                  <div class="col s5">
+                      <form #studentEvaluateForm="ngForm" (ngSubmit)="onSubmit(studentEvaluateForm)">
+                          <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="studentEvaluateService.selectedstudentEvaluate._id">
+                          <div class="row">
+                              <div class="input-field col s12">
+                                  <input type="text" name="matricNo" #name="ngModel" [(ngModel)]="studentEvaluateService.selectedstudentEvaluate.matricNo" placeholder="Enter MatricNo" required>
+                                  <label>MatricNo :
+                    <label class="red-text">*</label>
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="input-field col s12">
+                                  <input type="text" name="score" #name="ngModel" [(ngModel)]="studentEvaluateService.selectedstudentEvaluate.score" placeholder="Eg : 80">
+                                  <label>Score :</label>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="input-field col s12">
+                                  <input type="text" name="grade" #name="ngModel" [(ngModel)]="studentEvaluateService.selectedstudentEvaluate.grade" placeholder="Eg : A">
+                                  <label>Grade :</label>
+                              </div>
+                          </div>
+                         
+                          <div class="row">
+                              <div class="input-field col s12">
+                                  <button class="btn btn-custom right" type="button" (click)="resetForm(studentEvaluateForm)">Reset</button>
+                                  <button class="btn btn-custom right" type="submit" [disabled]="!studentEvaluateForm.valid">Submit</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+                  <div class="col s7">
+                      <table class="responsive-table highlight">
+                          <thead>
+                              <tr>
+                                  <th>MatricNo</th>
+                                  <th>Score</th>
+                                  <th>Grade</th>
+                                  <th></th>
+                              </tr>
+                          </thead>
+                          <tr *ngFor="let emp of studentEvaluateService.studEva">
+                              <td>{{emp.matricNo}}</td>
+                              <td>{{emp.score}}</td>
+                              <td>{{emp.grade}}</td>
+                              <td>
+                                  <a class="action-btn" (click)="onEdit(emp)">
+                                      <i class="material-icons">edit</i>
+                                  </a>
+                                  <a class="action-btn" (click)="onDelete(emp._id,studentEvaluateForm)">
+                                      <i class="material-icons">delete</i>
+                                  </a>
+                              </td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>

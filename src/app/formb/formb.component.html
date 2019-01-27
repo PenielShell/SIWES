@@ -1,0 +1,106 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <div class="col s5">
+                        <form #formbForm="ngForm" (ngSubmit)="onSubmit(formbForm)">
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="formbService.selectedFormb._id">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="name" #name="ngModel" [(ngModel)]="formbService.selectedFormb.name" placeholder="Enter full name" required>
+                                    <label>Name :
+                      <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="matricNo" #name="ngModel" [(ngModel)]="formbService.selectedFormb.matricNo" placeholder="Eg : 190404101">
+                                    <label>MatricNo :
+                                            <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="department" #name="ngModel" [(ngModel)]="formbService.selectedFormb.position" placeholder="Eg : computer science">
+                                    <label>Department :
+                                            <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="company" #name="ngModel" [(ngModel)]="formbService.selectedFormb.company" placeholder="Enter company name">
+                                    <label>Company :
+                                            <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="address" #name="ngModel" [(ngModel)]="formbService.selectedFormb.address" placeholder="Enter office location">
+                                    <label>Address :
+                                            <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="allowances" #name="ngModel" [(ngModel)]="formbService.selectedFormb.allowances" placeholder="Amount paid">
+                                    <label>Allowances : </label>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="workdone" #name="ngModel" [(ngModel)]="formbService.selectedFormb.workdone" placeholder="Duties done">
+                                    <label>Workdone :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="weeks" #name="ngModel" [(ngModel)]="formbService.selectedFormb.weeks" placeholder="E.g 25weeks">
+                                    <label>Weeks :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button class="btn btn-custom right" type="button" (click)="resetForm(formbForm)">Reset</button>
+                                    <button class="btn btn-custom right" type="submit" [disabled]="!formbForm.valid">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- <div class="col s7">
+                        <table class="responsive-table highlight">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>MatricNo</th>
+                                    <th>Company</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tr *ngFor="let emp of formaService.formas">
+                                <td>{{emp.name}}</td>
+                                <td>{{emp.matricNo}}</td>
+                                <td>{{emp.company}}</td>
+                                <td>
+                                    <a class="action-btn" (click)="onEdit(emp)">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+                                    <a class="action-btn" (click)="onDelete(emp._id,formaForm)">
+                                        <i class="material-icons">delete</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

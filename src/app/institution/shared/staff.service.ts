@@ -9,7 +9,7 @@ import { Staff } from './staff.model';
 })
 export class StaffService {
   selectedStaff: Staff = {
-    staffId: 0,
+    staffId: null,
     email: '',
     password: ''
   };

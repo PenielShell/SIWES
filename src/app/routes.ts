@@ -10,7 +10,13 @@ import { SignIn1Component } from './institution/staff/sign-in1/sign-in1.componen
 import { StaffComponent } from './institution/staff/staff.component';
 import { AuthGuard1 } from './institution/auth/auth.guard1';
 import {HomeComponent} from "./institution/staff-dashboard/pages/home/home.component";
+import {ReportComponent} from "./student-dashboard/pages/report/report.component";
+import {EvaluateComponent} from "./student-dashboard/pages/evaluate/evaluate.component";
 import {Home1Component} from "./student-dashboard/pages/home1/home1.component";
+import { FormaComponent } from './forma/forma.component';
+import { FormbComponent } from './formb/formb.component';
+import { ButtonAComponent } from './student-dashboard/buttons/button-a/button-a.component';
+import { ButtonBComponent } from './student-dashboard/buttons/button-b/button-b.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Component } from '@angular/core';
 
@@ -27,13 +33,22 @@ export const appRoutes: Routes = [
     },
     {
         path: 'studentDashboard', component: StudentDashboardComponent,canActivate:[AuthGuard],
-        children: [
-        
+            children: [
             {path: '', redirectTo: 'home1', pathMatch: 'full'},
-        { path: 'home1', component: Home1Component},
-        {path: 'others1',loadChildren:'./student-dashboard/pages/others/others1.module#OthersModule1',},
-        {path: '**', redirectTo: 'home1', pathMatch: 'full'},
-    ]
+                    { path: 'home1', component: Home1Component,
+                            children:[
+                                { path: 'forma', component: FormaComponent},
+                                { path: 'formb', component: FormbComponent},
+                            ]
+                        },
+            
+            {path: 'others1',loadChildren:'./student-dashboard/pages/others/others1.module#OthersModule1'},
+            { path: 'report', component: ReportComponent},
+            { path: 'evaluate', component: EvaluateComponent},
+            
+            
+                
+        ]
     },
     {
         path: '', redirectTo: '/login', pathMatch: 'full'
@@ -50,32 +65,28 @@ export const appRoutes: Routes = [
         path: 'staffDashboard',
          component: StaffDashboardComponent,
          canActivate:[AuthGuard1],
-         children: [
-        
-            {path: '', redirectTo: 'home', pathMatch: 'full'},
-        { path: 'home', component: HomeComponent},
-        {path: 'others',loadChildren:'./institution/staff-dashboard/pages/others/others.module#OthersModule',},
-        {path: '**', redirectTo: 'home', pathMatch: 'full'},
-    ]
+                children: [
+                {path: '', redirectTo: 'home', pathMatch: 'full'},
+                { path: 'home', component: HomeComponent},
+                {path: 'others',loadChildren:'./institution/staff-dashboard/pages/others/others.module#OthersModule',},
+                {path: '**', redirectTo: 'home', pathMatch: 'full'},
+                ]
     },
     {
         path: '', redirectTo: '/login1', pathMatch: 'full'
     },
-    // {
-    //     path: '', component: StaffDashboardComponent,
-    //     children: [
-           
 
-    //         // {path: '', redirectTo: 'others'},
-    //     { path: 'home', component: HomeComponent},
-
-    //     {path: 'others',loadChildren:'./institution/staff-dashboard/pages/others/others.module#OthersModule',},
-
-    //     {path: '', redirectTo: 'home', pathMatch: 'full'},
-    // ]
+            // { path: 'forma', component: FormaComponent},
+    // { path: 'forma', component: FormaComponent}, 
+    // { path: 'studentDashboard', component: StudentDashboardComponent,
+    //     children:[
+    //         // {path: '**', redirectTo: 'forma', pathMatch: 'full'},
+    //         { path: 'forma', component: FormaComponent}, 
+    //     ]
     // },
+  
     
-     
+      
         
         
    
