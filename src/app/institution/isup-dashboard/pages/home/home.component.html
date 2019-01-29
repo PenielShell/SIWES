@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <div class="col s5">
+                        <form #formaForm="ngForm" (ngSubmit)="onSubmit(formaForm)">
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="formaService.selectedForma._id">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="name" #name="ngModel" [(ngModel)]="formaService.selectedForma.name" placeholder="Enter full name" required>
+                                    <label>Name :
+                          <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="matricNo" #name="ngModel" [(ngModel)]="formaService.selectedForma.matricNo" placeholder="Eg : 190404101">
+                                    <label>MatricNo :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="position" #name="ngModel" [(ngModel)]="formaService.selectedForma.position" placeholder="Eg : jnr. Developer">
+                                    <label>Position :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="company" #name="ngModel" [(ngModel)]="formaService.selectedForma.company" placeholder="Enter company name">
+                                    <label>Company :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="address" #name="ngModel" [(ngModel)]="formaService.selectedForma.address" placeholder="Enter office location">
+                                    <label>Address :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="telephone" #name="ngModel" [(ngModel)]="formaService.selectedForma.telephone" placeholder="Student Mobile Number">
+                                    <label>Telephone :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button class="btn btn-custom right" type="button" (click)="resetForm(formaForm)">Reset</button>
+                                    <button class="btn btn-custom right" type="submit" [disabled]="!formaForm.valid">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- <div class="col s7">
+                            <table class="responsive-table highlight">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>MatricNo</th>
+                                        <th>Company</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tr *ngFor="let emp of formaService.formas">
+                                    <td>{{emp.name}}</td>
+                                    <td>{{emp.matricNo}}</td>
+                                    <td>{{emp.company}}</td>
+                                    <td>
+                                        <a class="action-btn" (click)="onEdit(emp)">
+                                            <i class="material-icons">edit</i>
+                                        </a>
+                                        <a class="action-btn" (click)="onDelete(emp._id,formaForm)">
+                                            <i class="material-icons">delete</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -35,6 +35,7 @@ import { PusherService } from '././logbook/services/pusher.service';
 //other
 import { AuthGuard } from './auth/auth.guard';
 import { AuthGuard1 } from './institution/auth/auth.guard1';
+import { AuthGuard2 } from './institution/auth2/auth.guard2';
 import { AuthInterceptor1 } from './institution/auth/auth.interceptor1';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { StaffComponent } from './institution/staff/staff.component';
@@ -50,7 +51,12 @@ import { FormaComponent } from './forma/forma.component';
 import { ButtonAComponent } from './student-dashboard/buttons/button-a/button-a.component';
 import { ButtonBComponent } from './student-dashboard/buttons/button-b/button-b.component';
 import { FormbComponent } from './formb/formb.component';
-import { StudentEvaluateComponent } from './student-evaluate/student-evaluate.component';
+import { IsupDashboardComponent } from './institution/isup-dashboard/isup-dashboard.component';
+import { IsupComponent } from './institution/isup/isup.component';
+import { SignUp2Component } from './institution/isup/sign-up2/sign-up2.component';
+import { SignIn2Component } from './institution/isup/sign-in2/sign-in2.component';
+import {Topnavbar2} from "./institution/isup-dashboard/components/topnavbar2/topnavbar2.component";
+import {Navigation2} from "./institution/isup-dashboard/components/navigation2/navigation2.component";
 
 
 
@@ -78,7 +84,12 @@ import { StudentEvaluateComponent } from './student-evaluate/student-evaluate.co
     ButtonAComponent,
     ButtonBComponent,
     FormbComponent,
-    StudentEvaluateComponent,
+    IsupDashboardComponent,
+    IsupComponent,
+    SignUp2Component,
+    SignIn2Component,
+    Topnavbar2,
+    Navigation2
    
     
   ],
@@ -97,7 +108,7 @@ import { StudentEvaluateComponent } from './student-evaluate/student-evaluate.co
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
-  },AuthGuard,AuthGuard1,StudentService,StaffService,FormaService,FormbService,LogbookService,PusherService],
+  },AuthGuard,AuthGuard1,AuthGuard2,StudentService,StaffService,FormaService,FormbService,LogbookService,PusherService],
 
   bootstrap: [AppComponent]
 })

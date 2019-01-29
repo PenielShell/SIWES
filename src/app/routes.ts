@@ -9,16 +9,18 @@ import { StaffDashboardComponent } from './institution/staff-dashboard/staff-das
 import { SignIn1Component } from './institution/staff/sign-in1/sign-in1.component';
 import { StaffComponent } from './institution/staff/staff.component';
 import { AuthGuard1 } from './institution/auth/auth.guard1';
+import { AuthGuard2 } from './institution/auth2/auth.guard2';
 import {HomeComponent} from "./institution/staff-dashboard/pages/home/home.component";
 import {ReportComponent} from "./student-dashboard/pages/report/report.component";
 import {EvaluateComponent} from "./student-dashboard/pages/evaluate/evaluate.component";
 import {Home1Component} from "./student-dashboard/pages/home1/home1.component";
 import { FormaComponent } from './forma/forma.component';
 import { FormbComponent } from './formb/formb.component';
-import { ButtonAComponent } from './student-dashboard/buttons/button-a/button-a.component';
-import { ButtonBComponent } from './student-dashboard/buttons/button-b/button-b.component';
-import { AppRoutingModule } from './app-routing.module';
-import { Component } from '@angular/core';
+import { IsupDashboardComponent } from './institution/isup-dashboard/isup-dashboard.component';
+import { IsupComponent } from './institution/isup/isup.component';
+import { SignUp2Component } from './institution/isup/sign-up2/sign-up2.component';
+import { SignIn2Component } from './institution/isup/sign-in2/sign-in2.component';
+
 
 
 
@@ -75,24 +77,29 @@ export const appRoutes: Routes = [
     {
         path: '', redirectTo: '/login1', pathMatch: 'full'
     },
+    {
+        path: 'signup2', component: IsupComponent,
+        children: [{ path: '', component: SignUp2Component }]
+    },
+    {
+        path: 'login2', component: IsupComponent,
+        children: [{ path: '', component: SignIn2Component }]
+    },
+    {
+        path: 'isupfDashboard',
+         component: IsupDashboardComponent,
+         canActivate:[AuthGuard2],
+                children: [
+                {path: '', redirectTo: 'home', pathMatch: 'full'},
+                { path: 'home', component: HomeComponent},
+                {path: 'others',loadChildren:'./institution/staff-dashboard/pages/others/others.module#OthersModule',},
+                {path: '**', redirectTo: 'home', pathMatch: 'full'},
+                ]
+    },
+    {
+        path: '', redirectTo: '/login2', pathMatch: 'full'
+    },
 
-            // { path: 'forma', component: FormaComponent},
-    // { path: 'forma', component: FormaComponent}, 
-    // { path: 'studentDashboard', component: StudentDashboardComponent,
-    //     children:[
-    //         // {path: '**', redirectTo: 'forma', pathMatch: 'full'},
-    //         { path: 'forma', component: FormaComponent}, 
-    //     ]
-    // },
-  
-    
-      
-        
-        
-   
-   
-    
-    
     
 ];
 

@@ -1,0 +1,21 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+
+
+                </div>
+                <div class="logo-element">
+                    SWWCC
+                </div>
+            </li>
+
+            <li [ngClass]="{active: activeRoute('home')}">
+                <a [routerLink]="['./home']"><i class="fa fa-dashboard"></i> <span class="nav-label">Dashboards</span></a>
+            </li>
+        </ul>
+
+
+    </div>
+</nav>

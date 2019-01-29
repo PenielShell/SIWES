@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
-/* @import url('https://fonts.googleapis.com/css?family=Poppins');
-@import url('./assets/styles/style.css');
+/*@import url('./assets/styles/style.css');
 @import url('./assets/styles/font-awesome.min.css');
 @import url('./assets/styles/bootstrap.min.css'); */
 
@@ -404,10 +404,9 @@ th:first-child {
 th:last-child {
     border-top-right-radius: 3px;
     border-right: none;
-} */
+}
 
-
-/* tr {
+tr {
     border-top: 1px solid #C1C3D1;
     border-bottom: 1px solid #C1C3D1;
     color: #666B85;
