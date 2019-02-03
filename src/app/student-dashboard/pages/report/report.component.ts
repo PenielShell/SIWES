@@ -4,7 +4,7 @@ import { FileService } from '../report/file.service';
 import {saveAs} from 'file-saver';
 
 
-const uri = 'http://localhost:4200/file/upload';
+const uri = 'http://localhost:4000/file/upload';
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',

@@ -20,14 +20,14 @@ export class IsupService {
   constructor(private http: HttpClient) { }
 
   postIsup(isup: Isup){
-    return this.http.post(environment.apiBaseUrl+'/register',isup,this.noAuthHeader);
+    return this.http.post(environment.apiBaseUrl2 +'/register',isup,this.noAuthHeader);
   }
   login(authCredentials) {
-    return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials,this.noAuthHeader);
+    return this.http.post(environment.apiBaseUrl2 + '/authenticate', authCredentials,this.noAuthHeader);
   }
 
   getIsupDashboard() {
-    return this.http.get(environment.apiBaseUrl + '/isupDashboard');
+    return this.http.get(environment.apiBaseUrl2 + '/isupDashboard');
   }
   
 

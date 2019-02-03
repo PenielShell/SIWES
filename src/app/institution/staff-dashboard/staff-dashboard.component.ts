@@ -14,7 +14,7 @@ import {HomeComponent} from "./pages/home/home.component";
 })
 export class StaffDashboardComponent implements OnInit {
   loginInfo:Staff = {
-    staffId: 1,
+    staffId: null,
     email: '', 
     password: ''
 

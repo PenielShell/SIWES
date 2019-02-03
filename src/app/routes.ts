@@ -86,9 +86,9 @@ export const appRoutes: Routes = [
         children: [{ path: '', component: SignIn2Component }]
     },
     {
-        path: 'isupfDashboard',
+        path: 'isupDashboard',
          component: IsupDashboardComponent,
-         canActivate:[AuthGuard2],
+         canActivate:[AuthGuard],
                 children: [
                 {path: '', redirectTo: 'home', pathMatch: 'full'},
                 { path: 'home', component: HomeComponent},
@@ -98,7 +98,7 @@ export const appRoutes: Routes = [
     },
     {
         path: '', redirectTo: '/login2', pathMatch: 'full'
-    },
+    }
 
     
 ];

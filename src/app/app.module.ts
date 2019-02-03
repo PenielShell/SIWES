@@ -26,6 +26,7 @@ import { StudentService } from './shared/student.service';
 import { StaffDashboardComponent } from './institution/staff-dashboard/staff-dashboard.component';
 import { SignIn1Component } from './institution/staff/sign-in1/sign-in1.component';
 import { StaffService } from './institution/shared/staff.service';
+import { IsupService } from './institution/shared2/isup.service';
 import { FormaService } from './shared2/forma.service';
 import { FormbService } from './shared3/formb.service';
 import { LogbookService } from '././logbook/services/logbook.service';
@@ -36,6 +37,7 @@ import { PusherService } from '././logbook/services/pusher.service';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthGuard1 } from './institution/auth/auth.guard1';
 import { AuthGuard2 } from './institution/auth2/auth.guard2';
+import { AuthInterceptor2 } from './institution/auth2/auth.interceptor2';
 import { AuthInterceptor1 } from './institution/auth/auth.interceptor1';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { StaffComponent } from './institution/staff/staff.component';
@@ -107,8 +109,19 @@ import {Navigation2} from "./institution/isup-dashboard/components/navigation2/n
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
-    multi: true
-  },AuthGuard,AuthGuard1,AuthGuard2,StudentService,StaffService,FormaService,FormbService,LogbookService,PusherService],
+    multi: true,
+  },
+
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor2 ,
+    multi: true,
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor1,
+    multi: true,
+  },AuthGuard,AuthGuard1,AuthGuard2,StudentService,StaffService,IsupService,FormaService,FormbService,LogbookService,PusherService],
 
   bootstrap: [AppComponent]
 })

@@ -13,7 +13,7 @@ export class FileService {
     downloadFile(file:String){
         var body = {filename:file};
 
-        return this._http.post('http://localhost:4200/file/download',body,{
+        return this._http.post('http://localhost:4000/file/download',body,{
             responseType : 'blob',
             headers:new HttpHeaders().append('Content-Type','application/json')
         });
