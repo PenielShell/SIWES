@@ -1,20 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css?family=Poppins');
 
-/*@import url('./assets/styles/style.css');
+/* @import url('https://fonts.googleapis.com/css?family=Poppins'); */
+
+
+/* @import url('./assets/styles/style.css');
 @import url('./assets/styles/font-awesome.min.css');
 @import url('./assets/styles/bootstrap.min.css'); */
 
 
-/* @import url('./assets/styles');
+/* @import url('./assets/styles');*/
 
 
 /* BASIC */
 
 html {
-    background-color: #56baed;
     height: 100%;
+    background-color: #2f4050;
 }
 
 body {
@@ -23,7 +25,6 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
-    background-color: #fff;
     margin: 0;
 }
 
@@ -41,7 +42,7 @@ h2 {
     text-transform: uppercase;
     display: inline-block;
     margin: 40px 8px 10px 8px;
-    /* color: #cccccc; */
+    color: #cccccc;
 }
 
 
@@ -371,7 +372,7 @@ label.validation-message {
 
 
 /* .table-fill {
-    background: white;
+    background-color: #293846;
     border-radius: 3px;
     border-collapse: collapse;
     height: 320px;
@@ -472,7 +473,8 @@ td.text-center {
 
 td.text-right {
     text-align: right;
-} */
+}
+ */
 
 
 /*Staff Dashboard css*/

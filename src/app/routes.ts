@@ -20,6 +20,9 @@ import { IsupDashboardComponent } from './institution/isup-dashboard/isup-dashbo
 import { IsupComponent } from './institution/isup/isup.component';
 import { SignUp2Component } from './institution/isup/sign-up2/sign-up2.component';
 import { SignIn2Component } from './institution/isup/sign-in2/sign-in2.component';
+import { SupervisorComponent } from './institution/supervisor/supervisor.component';
+import { Evaluators2Component } from './institution/staff-dashboard/pages/evaluators2/evaluators2.component';
+import { StudentProfileComponent } from './student-dashboard/pages/student-profile/student-profile.component';
 
 
 
@@ -36,17 +39,18 @@ export const appRoutes: Routes = [
     {
         path: 'studentDashboard', component: StudentDashboardComponent,canActivate:[AuthGuard],
             children: [
-            {path: '', redirectTo: 'home1', pathMatch: 'full'},
+            // {path: '', redirectTo: 'home1', pathMatch: 'full'},
                     { path: 'home1', component: Home1Component,
                             children:[
                                 { path: 'forma', component: FormaComponent},
                                 { path: 'formb', component: FormbComponent},
                             ]
                         },
-            
+            {path:'studentProfile', component:StudentProfileComponent},
             {path: 'others1',loadChildren:'./student-dashboard/pages/others/others1.module#OthersModule1'},
             { path: 'report', component: ReportComponent},
             { path: 'evaluate', component: EvaluateComponent},
+            {path:'isupDashboard', component:IsupDashboardComponent},
             
             
                 
@@ -70,7 +74,8 @@ export const appRoutes: Routes = [
                 children: [
                 {path: '', redirectTo: 'home', pathMatch: 'full'},
                 { path: 'home', component: HomeComponent},
-                {path: 'others',loadChildren:'./institution/staff-dashboard/pages/others/others.module#OthersModule',},
+                { path: 'supervisor', component: SupervisorComponent},
+                { path: 'siwesUnit', component: Evaluators2Component},
                 {path: '**', redirectTo: 'home', pathMatch: 'full'},
                 ]
     },
@@ -85,20 +90,20 @@ export const appRoutes: Routes = [
         path: 'login2', component: IsupComponent,
         children: [{ path: '', component: SignIn2Component }]
     },
-    {
-        path: 'isupDashboard',
-         component: IsupDashboardComponent,
-         canActivate:[AuthGuard],
-                children: [
-                {path: '', redirectTo: 'home', pathMatch: 'full'},
-                { path: 'home', component: HomeComponent},
-                {path: 'others',loadChildren:'./institution/staff-dashboard/pages/others/others.module#OthersModule',},
-                {path: '**', redirectTo: 'home', pathMatch: 'full'},
-                ]
-    },
-    {
-        path: '', redirectTo: '/login2', pathMatch: 'full'
-    }
+    // {
+    //     path: 'isupDashboard',
+    //      component: IsupDashboardComponent,
+    //      canActivate:[AuthGuard2],
+    //             children: [
+    //             {path: '', redirectTo: 'home', pathMatch: 'full'},
+    //             { path: 'home', component: HomeComponent},
+    //             {path: 'others',loadChildren:'./institution/staff-dashboard/pages/others/others.module#OthersModule',},
+    //             {path: '**', redirectTo: 'home', pathMatch: 'full'},
+    //             ]
+    // },
+    // {
+    //     path: '', redirectTo: '/login2', pathMatch: 'full'
+    // }
 
     
 ];

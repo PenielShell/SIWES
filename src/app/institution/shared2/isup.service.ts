@@ -23,7 +23,7 @@ export class IsupService {
     return this.http.post(environment.apiBaseUrl2 +'/register',isup,this.noAuthHeader);
   }
   login(authCredentials) {
-    return this.http.post(environment.apiBaseUrl2 + '/authenticate', authCredentials,this.noAuthHeader);
+    return this.http.post(environment.apiBaseUrl2 + '/authenticate',authCredentials,this.noAuthHeader);
   }
 
   getIsupDashboard() {

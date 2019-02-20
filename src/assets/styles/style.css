@@ -2871,7 +2871,7 @@ div.dt-button-info {
 }
 
 #nestable2 .dd-handle:hover {
-    /*background: #bbb;*/
+    background: #bbb;
 }
 
 #nestable2 span.label {
@@ -3805,7 +3805,7 @@ a.forum-item-title:hover {
 /* Payments */
 
 .payment-card {
-    background: #ffffff;
+    background: #2f4050;
     padding: 20px;
     margin-bottom: 25px;
     border: 1px solid #e7eaec;

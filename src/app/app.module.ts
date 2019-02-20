@@ -7,6 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import {FileUploadModule} from 'ng2-file-upload';
 
 
@@ -29,9 +31,10 @@ import { StaffService } from './institution/shared/staff.service';
 import { IsupService } from './institution/shared2/isup.service';
 import { FormaService } from './shared2/forma.service';
 import { FormbService } from './shared3/formb.service';
+import { SupervisorService } from './institution/shared3/supervisor.service';
 import { LogbookService } from '././logbook/services/logbook.service';
 import { PusherService } from '././logbook/services/pusher.service';
-
+import { UserService } from './institution/staff-dashboard/pages/evaluators2/services/user.service';
 
 //other
 import { AuthGuard } from './auth/auth.guard';
@@ -59,6 +62,11 @@ import { SignUp2Component } from './institution/isup/sign-up2/sign-up2.component
 import { SignIn2Component } from './institution/isup/sign-in2/sign-in2.component';
 import {Topnavbar2} from "./institution/isup-dashboard/components/topnavbar2/topnavbar2.component";
 import {Navigation2} from "./institution/isup-dashboard/components/navigation2/navigation2.component";
+import { Evaluators2Component } from './institution/staff-dashboard/pages/evaluators2/evaluators2.component';
+import { DataTableComponent } from './institution/staff-dashboard/pages/evaluators2/data-table/data-table.component';
+import { MainNavComponent } from './institution/staff-dashboard/pages/evaluators2/main-nav/main-nav.component';
+import { SupervisorComponent } from './institution/supervisor/supervisor.component';
+import { StudentProfileComponent } from './student-dashboard/pages/student-profile/student-profile.component';
 
 
 
@@ -91,7 +99,13 @@ import {Navigation2} from "./institution/isup-dashboard/components/navigation2/n
     SignUp2Component,
     SignIn2Component,
     Topnavbar2,
-    Navigation2
+    Navigation2,
+    Evaluators2Component,
+    DataTableComponent,
+    MainNavComponent,
+    SupervisorComponent,
+    StudentProfileComponent
+    
    
     
   ],
@@ -103,10 +117,19 @@ import {Navigation2} from "./institution/isup-dashboard/components/navigation2/n
     ReactiveFormsModule,
     FileUploadModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    LayoutModule,
+    MatButtonModule, 
+    MatToolbarModule,
+     MatSidenavModule, 
+     MatIconModule,
+      MatListModule
   ],
  
-  providers: [{
+  providers: [UserService, {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true,
@@ -121,8 +144,8 @@ import {Navigation2} from "./institution/isup-dashboard/components/navigation2/n
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor1,
     multi: true,
-  },AuthGuard,AuthGuard1,AuthGuard2,StudentService,StaffService,IsupService,FormaService,FormbService,LogbookService,PusherService],
-
+  },AuthGuard,AuthGuard1,AuthGuard2,StudentService,SupervisorService,StaffService,IsupService,FormaService,FormbService,LogbookService,PusherService],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

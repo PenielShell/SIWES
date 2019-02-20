@@ -1,0 +1,95 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <div class="col s5">
+                        <h3>INSITITUTION SUPERVISOR</h3>
+                        <form #supervisorForm="ngForm" (ngSubmit)="onSubmit(supervisorForm)">
+
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="supervisorService.selectedSupervisor._id">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="title" #name="ngModel" [(ngModel)]="supervisorService.selectedSupervisor.title" placeholder="e.g Dr or Mr" required>
+                                    <label>Title :</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="name" #name="ngModel" [(ngModel)]="supervisorService.selectedSupervisor.name" placeholder="Eg : Eunice Ogunrinde">
+                                    <label>Full name :
+                                        <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="studMatNo" #name="ngModel" [(ngModel)]="supervisorService.selectedSupervisor.studMatNo" placeholder="Eg : 140404122">
+                                    <label>Student Matric Number :
+                                        <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="phoneNo" #name="ngModel" [(ngModel)]="supervisorService.selectedSupervisor.phoneNo" placeholder="Enter your phone Number">
+                                    <label>phone Number :
+                                        <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="comments" #name="ngModel" [(ngModel)]="supervisorService.selectedSupervisor.comments" placeholder="Comments on students work">
+                                    <label>Comments :
+                                        <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="location" #name="ngModel" [(ngModel)]="supervisorService.selectedSupervisor.location" placeholder="Location under supervision">
+                                    <label>location :
+                                        <label class="red-text">*</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button class="btn btn-custom right" type="button" (click)="resetForm(supervisorForm)">Reset</button>
+                                    <button class="btn btn-custom right" type="submit" [disabled]="!supervisorForm.valid">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- <div class="col s7">
+                      <table class="responsive-table highlight">
+                          <thead>
+                              <tr>
+                                  <th>Name</th>
+                                  <th>MatricNo</th>
+                                  <th>Company</th>
+                                  <th></th>
+                              </tr>
+                          </thead>
+                          <tr *ngFor="let emp of formaService.formas">
+                              <td>{{emp.name}}</td>
+                              <td>{{emp.matricNo}}</td>
+                              <td>{{emp.company}}</td>
+                              <td>
+                                  <a class="action-btn" (click)="onEdit(emp)">
+                                      <i class="material-icons">edit</i>
+                                  </a>
+                                  <a class="action-btn" (click)="onDelete(emp._id,formaForm)">
+                                      <i class="material-icons">delete</i>
+                                  </a>
+                              </td>
+                          </tr>
+                      </table>
+                  </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

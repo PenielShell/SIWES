@@ -4,25 +4,29 @@
             <li class="nav-header">
                 <div class="dropdown profile-element">
                     <span>
-                        <img alt="image" class="img-circle" width="80px">
+                        <!-- <img alt="image" class="img-circle" width="80px"> -->
                         <img src="/src/assets/img/users.png" id="icon" alt="User Icon" />
                     </span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                           <span class="block m-t-xs">
-                          <strong class="font-bold">{{loginInfo.matricNo}}</strong>
+                          <strong class="font-bold"></strong>
                       </span>
-                        <span class="text-muted text-xs block">{{loginInfo.email}}</span>
+                        <span class="text-muted text-xs block"></span>
                         </span>
                     </a>
                 </div>
                 <div class="logo-element">
-                    SWWCC
+
                 </div>
             </li>
 
+            <li [ngClass]="{active: activeRoute('profile')}">
+                <a [routerLink]="['./studentProfile']"><i class="fa fa-dashboard"></i> <span class="nav-label">studentProfile</span></a>
+            </li>
+
             <li [ngClass]="{active: activeRoute('home')}">
-                <a [routerLink]="['./home1']"><i class="fa fa-dashboard"></i> <span class="nav-label">Documents</span></a>
+                <a [routerLink]="['./home1']"><i class="fa fa-home"></i> <span class="nav-label">Documents</span></a>
             </li>
             <li [ngClass]="{active: activeRoute('others')}">
                 <a [routerLink]="['./others1']"><i class="fa fa-desktop"></i> <span class="nav-label">Logbook</span></a>
@@ -31,7 +35,10 @@
                 <a [routerLink]="['./report']"><i class="fa fas fa-database"></i> <span class="nav-label">Report</span></a>
             </li>
             <li [ngClass]="{active: activeRoute('evaluate')}">
-                <a [routerLink]="['./evaluate']"><i class="fa fas fa-notes-medical"></i> <span class="nav-label">Evaluation</span></a>
+                <a [routerLink]="['./evaluate']"><i class="fas fa-sticky-note"></i> <span class="nav-label">Evaluation</span></a>
+            </li>
+            <li [ngClass]="{active: activeRoute('isupDashboard')}">
+                <a [routerLink]="['./isupDashboard']"><i class="fas fa-industry"></i> <span class="nav-label">IndustrySupervisor</span></a>
             </li>
         </ul>
 
