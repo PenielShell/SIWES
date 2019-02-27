@@ -1,30 +1,64 @@
-<div class="wrapper wrapper-content">
-    <div class="row">
-        <div class="col-lg-3">
+<html>
 
-            <div class="ibox-title">
-                <button><span class="label label-success pull-right">Evaluators</span></button>
-                <h5></h5>
+<head>
+    <link rel="stylesheet" href="../../../../../assets/styles/css/bootstrap.min.css">
+    <title>SIWES Student Evaluation Sheet</title>
+    <style>
+        #mytable input {
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body ng-app="myApp" ng-controller="MainController">
+    <h1 align="center" style="color:#428bca">SIWES Student Evaluation Sheet</h1>
+    <div class="container">
+        <div class="row">
+            <button type="button" style="float:right;margin-bottom: 10px;" class="btn btn-info " ng-click="addEmployee()">Add Employee</button>
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <form id="empform" #studentEvaluateForm="ngForm" (ngSubmit)="onSubmit(EvaluateForm)">
+                        <table id="mytable" class="table table-bordered">
+                            <thead>
+                                <th style="width:5%;">SNO</th>
+                                <th style="width:10%;">Matric Number</th>
+                                <th style="width:15%;">Dressing</th>
+                                <th style="width:10%;">Presentation</th>
+                                <th style="width:10%;">Audibility</th>
+                                <th style="width:15%;">Composition</th>
+                                <th style="width:15%;">Workdone</th>
+                                <!-- <th style="width:25%;">Actions</th> -->
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="let emp of EvaluateService.Eva">
+
+                                    <td>{{emp.matricNo}}<input #name="ngModel" [(ngModel)]="evaluateService.selectedEvaluate.matricNo" [disabled]="!EvaluateForm" /> </td>
+                                    <td>{{emp.dressing}}<input #name="ngModel" [(ngModel)]="evaluateService.selectedEvaluate.dressing" [disabled]="!EvaluateForm" /> </td>
+                                    <td>{{emp.presentation}}<input #name="ngModel" [(ngModel)]="evaluateService.selectedEvaluate.presentation" [disabled]="!EvaluateForm" /></td>
+                                    <td>{{emp.audibility}}<input #name="ngModel" [(ngModel)]="evaluateService.selectedEvaluate.audibility" [disabled]="!EvaluateForm" /> </td>
+                                    <td>{{emp.composition}}<input #name="ngModel" [(ngModel)]="evaluateService.selectedEvaluate.composition" [disabled]="!EvaluateForm" /></td>
+                                    <td>{{emp.workdone}}<input #name="ngModel" [(ngModel)]="evaluateService.selectedEvaluate.workdone" [disabled]="!EvaluateForm" /></td>
+                                    <td>
+                                        <div class="buttons">
+                                            <button class="btn btn-primary" (click)="onEdit(emp)">Edit</button>
+                                            <button class="btn btn-danger" (click)="onDelete(emp._id,EvaluateForm)">Delete</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <input type="submit" class="btn btn-primary" [disabled]="!EvaluateForm.valid" value="Submit" />
+                    </form>
+                    <div class="clearfix"></div>
+                </div>
             </div>
-
         </div>
-        <div class="col-lg-3">
-
-            <div class="ibox-title">
-                <button><span class="label label-info pull-right">Supervisors</span></button>
-                <h5></h5>
-            </div>
-
-        </div>
-        <div class="col-lg-3">
-
-            <div class="ibox-title">
-                <button><span class="label label-primary pull-right">SIWES Unit</span></button>
-                <h5></h5>
-            </div>
-
-        </div>
-
     </div>
+</body>
+<!-- <script src="../../js/jquery.js"></script>
+<script src="../../jsbootstrap.min.js"></script>
+<script src="../../js/angular.min.js"></script>
+<script src="../../js/app.js"></script> -->
 
-</div>
+</html>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { SupervisorService } from '../shared3/supervisor.service';
-import { Supervisor} from '../shared3/supervisor.model';
+import { Supervisor, MatNo} from '../shared3/supervisor.model';
 
 declare var M: any;
 
@@ -19,6 +19,7 @@ export class SupervisorComponent implements OnInit {
   ngOnInit() {
     this.resetForm();
     this.refreshSupervisorList();
+    this.refreshMatNoList();
   }
 
   resetForm(form?: NgForm) {
@@ -33,6 +34,11 @@ export class SupervisorComponent implements OnInit {
       comments: "",
       location: ""
      
+    },
+    this.supervisorService.selectedMatNo = {
+      _id: "",
+      studMatNo: null
+     
     }
   }
 
@@ -42,6 +48,11 @@ export class SupervisorComponent implements OnInit {
         this.resetForm(form);
         this.refreshSupervisorList();
         M.toast({ html: 'Submitted successfully', classes: 'rounded' });
+      });
+      this.supervisorService.postMatNo(form.value).subscribe((res) => {
+        this.resetForm(form);
+        this.refreshMatNoList();
+  
       });
     }
     else {
@@ -57,6 +68,11 @@ export class SupervisorComponent implements OnInit {
   refreshSupervisorList() {
     this.supervisorService.getSupervisorList().subscribe((res) => {
       this.supervisorService.supervisors = res as Supervisor[];
+    });
+  }
+  refreshMatNoList() {
+    this.supervisorService.getMatNoList().subscribe((res) => {
+      this.supervisorService.supervised = res as MatNo[];
     });
   }
 

@@ -7,3 +7,9 @@ export class Supervisor {
     comments:  string; 
     location:  string; 
 }
+
+export class MatNo {
+    _id: string;
+    studMatNo:number;
+}
+
